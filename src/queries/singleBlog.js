@@ -1,5 +1,5 @@
-export const singleBlog = `query SingleBlog {
-  blog(where: {id: ""}) {
+export const singleBlog = `query SingleBlog($blogId: ID) {
+  blog(where: {id: $blogId}) {
     author
     category
     content
@@ -9,4 +9,4 @@ export const singleBlog = `query SingleBlog {
     releaseDate
     title
   }
-}`
+}`;
