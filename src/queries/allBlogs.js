@@ -5,11 +5,9 @@ export const allBlogs = `query AllBlogs {
     releaseDate
     subTitle
     title
+    content
     images {
       url
-    }
-    content {
-      markdown
     }
   }
 }`

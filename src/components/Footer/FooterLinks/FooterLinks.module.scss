@@ -1,0 +1,8 @@
+@use "../../../styles/mixins" as m;
+
+.linkStyling {
+    @include m.flexBox(column, center, center, 0.7rem);
+    h4, p {
+        margin: 0;
+    }
+}

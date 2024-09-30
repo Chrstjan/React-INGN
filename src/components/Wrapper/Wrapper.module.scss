@@ -1,0 +1,10 @@
+@use "../../styles/variables" as *;
+
+.wrapperStyling {
+    background: $gray-color;
+    min-height: 100vh;
+
+    h2 {
+        margin: 0;
+    }
+}

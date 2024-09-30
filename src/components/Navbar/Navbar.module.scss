@@ -1,7 +1,28 @@
+@use "../../styles/mixins" as m;
+@use "../../styles/variables" as *;
+@use "../../styles/placeholders";
+
 .navStyling {
     display: none;
     
     &.visible {
-        display: block;
+        @include m.flexBox(column, center, center);
+    }
+
+    li {
+        list-style-type: none;
+        border-left: 1px solid $dark-color;
+        border-right: 1px solid $dark-color;
+        padding: 0rem 0.3rem;
+    }
+
+    a {
+        color: $dark-color;
+        text-decoration: none;
+        @extend %breadtextfont;
+
+        &.active {
+            text-decoration: underline;
+        }
     }
 }

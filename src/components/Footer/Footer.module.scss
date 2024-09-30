@@ -1,7 +1,11 @@
 @use "../../styles/mixins" as m;
+@use "../../styles/variables" as *;
 
 .footerStyling {
+    border-top: 2px solid #00000040;
+    padding-top: 0.8rem;
     @include m.flexBox(column, center, center, 1rem);
     position: relative;
     bottom: 0;
+    background: $white-color;
 }
