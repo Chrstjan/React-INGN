@@ -1,0 +1,7 @@
+.navStyling {
+    display: none;
+    
+    &.visible {
+        display: block;
+    }
+}
