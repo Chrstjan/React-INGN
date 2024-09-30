@@ -1,5 +1,5 @@
-export const blogCategory = `query BlogCategory($categoryName: STRING) {
-  blogs(where: {category_contains: categoryName}) {
+export const blogCategory = `query BlogCategory($categoryName: String!) {
+  blogs(where: {category: $categoryName}) {
     author
     category
     content

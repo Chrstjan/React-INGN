@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useGraphFetch } from "../hooks/useGraphFetch";
 import { blogCategory } from "../queries/blogCategory";
+import { useEffect } from "react";
+import { Wrapper } from "../components/Wrapper/Wrapper";
 
 export const CategoryPage = () => {
   const { categoryName } = useParams();
@@ -13,7 +15,15 @@ export const CategoryPage = () => {
     categoryName
   );
 
+  if (error) {
+    console.log(error.message);
+  }
+
   console.log(data);
 
-  return <div>CategoryPage</div>;
+  useEffect(() => {
+    console.log(categoryName);
+  }, [categoryName]);
+
+  return <Wrapper></Wrapper>;
 };

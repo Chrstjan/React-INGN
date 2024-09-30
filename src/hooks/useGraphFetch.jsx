@@ -41,7 +41,7 @@ export const useGraphFetch = (
   selectorValue
 ) => {
   const { data, isLoading, error } = useQuery({
-    queryKey: [query],
+    queryKey: [query, selectorValue],
     queryFn: async () =>
       request(
         url || import.meta.env[envKey], //This makes it able to use either a url to the api or a env key
