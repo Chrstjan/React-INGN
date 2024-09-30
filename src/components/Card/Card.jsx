@@ -12,8 +12,8 @@ export const Card = ({data}) => {
                     <h2>{item.title}</h2>
                     <p>D. {item.releaseDate} - af {item.author}</p>
                  </header>
-                 <Markdown>{item.content.slice(0, 110) + (item.content.length > 20 ? '...' : '')}</Markdown>
-                 <Link>Læs mere</Link>
+                 <Markdown>{item.content}</Markdown>
+                 <Link to={`/article/${item.id}`}>Læs mere</Link>
                  <img src={item.images[0].url} alt={item.title}/>
                 </figure>
             )

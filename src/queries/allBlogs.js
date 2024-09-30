@@ -3,9 +3,9 @@ export const allBlogs = `query AllBlogs {
     author
     category
     releaseDate
-    subTitle
     title
-    content
+    content,
+    id
     images {
       url
     }
