@@ -26,5 +26,11 @@ export const ArticlePage = () => {
     return <h2>Error: {error.message}</h2>;
   }
 
-  return <Wrapper>{<Card data={[data?.blog]} />}</Wrapper>;
+  const hideReadMore = true;
+
+  return (
+    <Wrapper>
+      {<Card data={[data?.blog]} hideReadMore={hideReadMore} />}
+    </Wrapper>
+  );
 };

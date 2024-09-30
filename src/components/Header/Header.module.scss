@@ -3,22 +3,26 @@
 @use "../../styles/placeholders";
 
 .headerStyling {
-    @include m.flexBox(row, space-between, center);
-    background: $white-color;
-    padding: 0.6rem 1rem;
-    box-shadow: 2px 2px #00000040;
+  @include m.flexBox(row, space-between, center);
+  background: $white-color;
+  padding: 0.6rem 1rem;
+  box-shadow: 2px 2px #00000040;
 
-    h1 {
-        margin: 0;
-        @extend %headerfont;
-        color: $red-color;
-    }
+  a {
+    text-decoration: none;
+  }
 
-    // ul {
-    //     display: none;
-    // }
+  h1 {
+    margin: 0;
+    @extend %headerfont;
+    color: $red-color;
+  }
 
-    .imageContainer {
-        @include m.flexBox(row, center, center, 1rem);
-    }
+  // ul {
+  //     display: none;
+  // }
+
+  .imageContainer {
+    @include m.flexBox(row, center, center, 1rem);
+  }
 }

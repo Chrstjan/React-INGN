@@ -1,48 +1,26 @@
 import { NavLink } from "react-router-dom";
-import { Paths } from "../../router/Paths";
+import { useGraphFetch } from "../../hooks/useGraphFetch";
+import { allCategories } from "../../queries/allCategories";
 import style from "./Navbar.module.scss";
 
-export const Navbar = ({isVisible}) => {
-  const navMenu = [
-    {
-      path: Paths.home,
-      text: "Alle",
-    },
-    {
-      path: Paths.indland,
-      text: "Indland",
-    },
-    {
-      path: Paths.udland,
-      text: "Udland",
-    },
-    {
-      path: Paths.teknologi,
-      text: "Teknologi",
-    },
-    {
-      path: Paths.sports,
-      text: "Sports",
-    },
-    {
-      path: Paths.politik,
-      text: "Politik",
-    },
-    {
-      path: Paths.samfund,
-      text: "Samfund",
-    },
-  ];
+export const Navbar = ({ isVisible }) => {
+  const { data } = useGraphFetch(
+    undefined,
+    "VITE_PUBLIC_API_KEY",
+    allCategories
+  );
 
-  return <nav>
-    <ul className={`${style.navStyling} ${isVisible ? style.visible : null}`}>
-      {navMenu.map((item) => {
-        return (
-          <li key={item.text}>
-            <NavLink to={item.path}>{item.text}</NavLink>
-          </li>
-        )
-      })}
-    </ul>
-  </nav>;
+  return (
+    <nav>
+      <ul className={`${style.navStyling} ${isVisible ? style.visible : null}`}>
+        {data?.kategoriers.map((item) => {
+          return (
+            <li key={item.id}>
+              <NavLink to={`/category/${item.title}`}>{item.title}</NavLink>
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
+  );
 };
