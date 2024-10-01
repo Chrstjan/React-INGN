@@ -3,38 +3,52 @@
 @use "../../styles/placeholders";
 
 .navStyling {
-    display: none;
+  display: none;
+
+  @media (min-width: 1280px) {
+    display: flex;
+    flex-direction: row;
+    gap: 1.3rem;
+    font-size: 19px;
+    padding-left: 0;
+  }
+
+  &.visible {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    position: absolute;
+    top: 6.1%;
+    left: 0;
+    width: 95.6%;
+    background: $white-color;
+    padding: 1rem 0.5rem;
 
     @media (min-width: 1280px) {
-        display: flex;
-        flex-direction: row;
-        gap: 1.3rem;
-        font-size: 19px;
-        padding-left: 0;
+      position: static;
+      display: flex;
+      flex-direction: row;
     }
-    
-    &.visible {
-        @include m.flexBox(column, center, center);
+  }
+
+  li {
+    list-style-type: none;
+    border-left: 2.3px solid $dark-color;
+    border-right: 2.3px solid $dark-color;
+    padding: 0rem 0.3rem;
+
+    @media (min-width: 1280px) {
+      padding: 0rem 0.7rem;
     }
+  }
 
-    li {
-        list-style-type: none;
-        border-left: 2.3px solid $dark-color;
-        border-right: 2.3px solid $dark-color;
-        padding: 0rem 0.3rem;
+  a {
+    color: $dark-color;
+    text-decoration: none;
+    @extend %breadtextfont;
 
-        @media (min-width: 1280px) {
-            padding: 0rem 0.7rem;
-        }
+    &.active {
+      text-decoration: underline;
     }
-
-    a {
-        color: $dark-color;
-        text-decoration: none;
-        @extend %breadtextfont;
-
-        &.active {
-            text-decoration: underline;
-        }
-    }
+  }
 }

@@ -2,12 +2,12 @@
 @use "../../styles/variables" as *;
 
 .wrapperStyling {
-    @include m.flexBox(column, center, center);
-    background: $gray-color;
-    min-height: 100vh;
-    padding: 1rem 0rem;
+  @include m.flexBox(column, center, center);
+  background: $gray-color;
+  min-height: 80vh;
+  padding: 1rem 0rem;
 
-    h2 {
-        margin: 0;
-    }
+  h2 {
+    margin: 0;
+  }
 }

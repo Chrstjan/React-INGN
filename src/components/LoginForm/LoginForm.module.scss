@@ -1,0 +1,49 @@
+@use "../../styles/mixins" as m;
+@use "../../styles/variables" as *;
+@use "../../styles/placeholders";
+
+.containerStyling {
+  @include m.flexBox(column, center, center, 4rem);
+  @extend %breadtextfont;
+  background: $white-color;
+  width: 80%;
+  padding: 5rem 1rem;
+
+  @media (min-width: 1280px) {
+    width: 55%;
+    padding: 4rem 0.5rem 15rem 0.5rem;
+  }
+
+  .formStyling {
+    @include m.flexBox(column, center, center, 1rem);
+
+    label {
+      align-self: flex-start;
+    }
+
+    input {
+      border: 0;
+      background: transparent;
+      border: 2px solid $red-color;
+      height: 2rem;
+      width: 15rem;
+
+      @media (min-width: 1280px) {
+        width: 25rem;
+        height: 2.5rem;
+      }
+    }
+
+    input[type="submit"] {
+      color: $dark-color;
+      height: 2.5rem;
+      width: 7rem;
+
+      @media (min-width: 1280px) {
+        width: 10rem;
+        align-self: flex-start;
+        cursor: pointer;
+      }
+    }
+  }
+}
