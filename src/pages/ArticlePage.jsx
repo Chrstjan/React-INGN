@@ -30,7 +30,7 @@ export const ArticlePage = () => {
 
   return (
     <Wrapper>
-      {<Card data={[data?.blog]} hideReadMore={hideReadMore} />}
+      {<Card data={[data?.blog]} hideReadMore={hideReadMore} cardStyling='singleArticle'/>}
     </Wrapper>
   );
 };

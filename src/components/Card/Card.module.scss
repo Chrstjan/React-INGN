@@ -1,17 +1,58 @@
+@use "../../styles/mixins" as m;
 @use "../../styles/variables" as *;
 @use "../../styles/placeholders";
 
 .cardStyling {
+    @include m.flexBox(column, center, center, 0rem);
     margin: 0;
     background: $white-color;
     margin: 0rem 1rem;
     padding: 0.4rem 1rem;
     @extend %breadtextfont;
 
+    @media (min-width: 1280px) {
+        justify-content: center;
+        align-items: flex-start;
+        padding: 2rem;
+
+        h3 {
+            margin: 0;
+        }
+    }
+
+    &.singleArticle {
+
+        @media (min-width: 1280px) {
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+        }
+
+        //Thumnail Image on the bottom of the card
+        .thumbnailStyling {
+            display: none;
+        }
+
+        .headerImage {
+            display: block;
+            margin: 0;
+        }
+
+        figcaption {
+            margin-top: 1rem;
+            @include m.flexBox(column, center, center);
+            max-width: 1000px;
+        }
+    }
+
     header {
         p {
             color: $red-color;
             font-size: 17px;
+        }
+
+        .headerImage {
+            display: none;
         }
     }
 
@@ -19,6 +60,7 @@
         width: 100%;
         margin-top: 1rem;
     }
+    
 
     a {
         text-decoration: none;
