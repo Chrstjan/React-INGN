@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useGraphFetch } from "../hooks/useGraphFetch";
 import { blogCategory } from "../queries/blogCategory";
-import { useEffect } from "react";
 import { Wrapper } from "../components/Wrapper/Wrapper";
+import { Card } from "../components/Card/Card";
 
 export const CategoryPage = () => {
   const { categoryName } = useParams();
@@ -15,15 +15,20 @@ export const CategoryPage = () => {
     categoryName
   );
 
+  if (isLoading) {
+    return <h2>Loading...</h2>
+  }
+
   if (error) {
     console.log(error.message);
   }
 
-  console.log(data);
+  const filteredData = data?.blogs.map(blog => ({
+    ...blog,
+    content: blog.content.slice(0, 110) + (blog.content.length > 20 ? '...' : '')
+  }));
 
-  useEffect(() => {
-    console.log(categoryName);
-  }, [categoryName]);
-
-  return <Wrapper></Wrapper>;
+  return <Wrapper>
+    {filteredData ? <Card data={filteredData} />: null}
+  </Wrapper>;
 };

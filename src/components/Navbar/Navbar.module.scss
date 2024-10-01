@@ -4,6 +4,14 @@
 
 .navStyling {
     display: none;
+
+    @media (min-width: 1280px) {
+        display: flex;
+        flex-direction: row;
+        gap: 1.3rem;
+        font-size: 19px;
+        padding-left: 0;
+    }
     
     &.visible {
         @include m.flexBox(column, center, center);
@@ -11,9 +19,13 @@
 
     li {
         list-style-type: none;
-        border-left: 1px solid $dark-color;
-        border-right: 1px solid $dark-color;
+        border-left: 2.3px solid $dark-color;
+        border-right: 2.3px solid $dark-color;
         padding: 0rem 0.3rem;
+
+        @media (min-width: 1280px) {
+            padding: 0rem 0.7rem;
+        }
     }
 
     a {

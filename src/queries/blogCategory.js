@@ -3,6 +3,7 @@ export const blogCategory = `query BlogCategory($categoryName: String!) {
     author
     category
     content
+    id
     images {
       url
     }

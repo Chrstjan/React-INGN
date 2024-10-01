@@ -16,6 +16,7 @@ export const Header = ({ children, setisVisible }) => {
       <span className={style.imageContainer}>
         <img src="./src/assets/images/user.svg" />
         <img
+          className={style.burgerStyling}
           onClick={() => handleNavbar()}
           src="./src/assets/images/Hamburger.svg"
         />

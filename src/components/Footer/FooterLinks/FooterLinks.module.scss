@@ -2,7 +2,23 @@
 
 .linkStyling {
     @include m.flexBox(column, center, center, 0.7rem);
+
+    @media (min-width: 1280px) {
+        margin: 2.5rem 0rem;
+        gap: 0.4rem;
+        align-items: flex-start;
+
+        &:last-of-type {
+            margin-bottom: 3.9rem;
+        }
+    }
     h4, p {
         margin: 0;
+    }
+
+    h4 {
+        @media (min-width: 1280px) {
+            margin-bottom: 0.5rem;
+        }
     }
 }

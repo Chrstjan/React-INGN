@@ -13,6 +13,9 @@ export const Navbar = ({ isVisible }) => {
   return (
     <nav>
       <ul className={`${style.navStyling} ${isVisible ? style.visible : null}`}>
+        <li>
+          <NavLink to="/">Alle</NavLink>
+        </li>
         {data?.kategoriers.map((item) => {
           return (
             <li key={item.id}>
