@@ -3,67 +3,104 @@
 @use "../../styles/placeholders";
 
 .cardStyling {
-    @include m.flexBox(column, center, center, 0rem);
-    margin: 0;
-    background: $white-color;
-    margin: 0rem 1rem;
-    padding: 0.4rem 1rem;
-    @extend %breadtextfont;
+  @include m.flexBox(column, center, center, 0rem);
+  margin: 0;
+  background: $white-color;
+  margin: 0rem 1rem;
+  padding: 0.4rem 1rem;
+  @extend %breadtextfont;
 
-    @media (min-width: 1280px) {
+  @media (min-width: 1280px) {
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+
+    &:nth-child(8) {
+      flex-direction: row-reverse;
+      gap: 1rem;
+      padding: 0;
+
+      .textContainer {
+        display: flex;
+        flex-direction: column;
         justify-content: center;
-        align-items: flex-start;
-        padding: 2rem;
+        align-items: center;
+        gap: 1rem;
+        max-height: 80vh;
+        height: 80vh;
+      }
 
-        h3 {
-            margin: 0;
-        }
+      img {
+        margin: 0;
+      }
+    }
+    &:nth-child(9) {
+      flex-direction: row;
+      gap: 1rem;
+      padding: 0;
+
+      img {
+        margin: 0;
+      }
+
+      .textContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        max-height: 72vh;
+        height: 72vh;
+      }
     }
 
-    &.singleArticle {
+    h3 {
+      margin: 0;
+    }
+  }
 
-        @media (min-width: 1280px) {
-            justify-content: center;
-            align-items: center;
-            padding: 0;
-        }
-
-        //Thumnail Image on the bottom of the card
-        .thumbnailStyling {
-            display: none;
-        }
-
-        .headerImage {
-            display: block;
-            margin: 0;
-        }
-
-        figcaption {
-            margin-top: 1rem;
-            @include m.flexBox(column, center, center);
-            max-width: 1000px;
-        }
+  &.singleArticle {
+    @media (min-width: 1280px) {
+      justify-content: center;
+      align-items: center;
+      padding: 0;
     }
 
-    header {
-        p {
-            color: $red-color;
-            font-size: 17px;
-        }
-
-        .headerImage {
-            display: none;
-        }
+    //Thumnail Image on the bottom of the card
+    .thumbnailStyling {
+      display: none;
     }
 
-    img {
-        width: 100%;
-        margin-top: 1rem;
+    .headerImage {
+      display: block;
+      margin: 0;
     }
-    
 
-    a {
-        text-decoration: none;
-        color: $dark-color;
+    figcaption {
+      margin-top: 1rem;
+      @include m.flexBox(column, center, center);
+      max-width: 1000px;
     }
+  }
+
+  header {
+    p {
+      color: $red-color;
+      font-size: 17px;
+    }
+
+    .headerImage {
+      display: none;
+    }
+  }
+
+  img {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: $dark-color;
+  }
 }

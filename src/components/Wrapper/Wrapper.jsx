@@ -1,7 +1,9 @@
-import style from "./Wrapper.module.scss"
+import style from "./Wrapper.module.scss";
 
-export const Wrapper = ({children}) => {
+export const Wrapper = ({ children, gridStyling }) => {
   return (
-    <section className={style.wrapperStyling}>{children}</section>
-  )
-}
+    <section className={`${style.wrapperStyling} ${style[gridStyling]}`}>
+      {children}
+    </section>
+  );
+};
