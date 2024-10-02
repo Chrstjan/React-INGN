@@ -3,6 +3,7 @@ export const singleBlog = `query SingleBlog($blogId: ID) {
     author
     category
     content
+    id
     images {
       url
     }

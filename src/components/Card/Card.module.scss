@@ -126,4 +126,26 @@
     text-decoration: none;
     color: $dark-color;
   }
+
+  .adminContainer {
+    @include m.flexBox(row, center, center, 0.5rem);
+    position: absolute;
+    top: 12%;
+    right: 3%;
+
+    button {
+      border: 0;
+      background: transparent;
+
+      &:hover {
+        cursor: pointer;
+        scale: 1.1;
+      }
+
+      svg {
+        fill: $red-color;
+        font-size: 33px;
+      }
+    }
+  }
 }

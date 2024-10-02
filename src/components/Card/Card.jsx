@@ -1,9 +1,11 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Markdown from "markdown-to-jsx";
+import { FaEdit } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
 import style from "./Card.module.scss";
-import { useEffect } from "react";
 
-export const Card = ({ data, hideReadMore, cardStyling }) => {
+export const Card = ({ data, hideReadMore, cardStyling, user, action }) => {
   // const desktopGrid = [
   //   style.news1,
   //   style.news2,
@@ -73,6 +75,16 @@ export const Card = ({ data, hideReadMore, cardStyling }) => {
                 alt={item.title}
               />
             </div>
+            {user ? (
+              <span className={style.adminContainer}>
+                <button onClick={() => action.mutate(item?.id)}>
+                  <MdDelete />
+                </button>
+                <button>
+                  <FaEdit />
+                </button>
+              </span>
+            ) : null}
           </figure>
         );
       })}
