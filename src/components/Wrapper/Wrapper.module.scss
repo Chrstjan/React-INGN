@@ -9,11 +9,18 @@
 
   &.articleGrid {
     @media (min-width: 1280px) {
-      // display: grid;
-      // grid-template-columns: repeat(2, 1fr);
-      // grid-template-rows: repeat(9, 1fr);
-      // grid-column-gap: 0px;
-      // grid-row-gap: 0px;
+      display: grid;
+      // grid-template-areas:
+      //   "news1 news1 news1 news1"
+      //   "news1 news1 news1 news1"
+      //   "news2 news2 news3 news3"
+      //   "news2 news2 news4 news4"
+      //   "news5 news5 news4 news4"
+      //   "news6 news6 news6 news6"
+      //   "news7 news7 news7 news7"
+      //   "news8 news8 news8 news9";
+      // gap: 20px;
+      // padding: 27px 20px 66px 20px;
     }
   }
 

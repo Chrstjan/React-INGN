@@ -14,8 +14,19 @@
     justify-content: center;
     align-items: flex-start;
     padding: 2rem;
+    width: 1200px;
+    padding: 0;
 
-    &:nth-child(8) {
+    .textContainer {
+      padding: 2rem;
+    }
+
+    .thumbnailContainer {
+      width: 100%;
+      padding: 0;
+    }
+
+    &:nth-child(6) {
       flex-direction: row-reverse;
       gap: 1rem;
       padding: 0;
@@ -26,15 +37,15 @@
         justify-content: center;
         align-items: center;
         gap: 1rem;
-        max-height: 80vh;
-        height: 80vh;
+        max-height: 60vh;
+        height: 60vh;
       }
 
       img {
         margin: 0;
       }
     }
-    &:nth-child(9) {
+    &:nth-child(7) {
       flex-direction: row;
       gap: 1rem;
       padding: 0;
@@ -64,6 +75,18 @@
       justify-content: center;
       align-items: center;
       padding: 0;
+
+      .textContainer {
+        padding: 0;
+
+        header {
+          padding: 1rem;
+        }
+
+        figcaption {
+          padding: 2rem;
+        }
+      }
     }
 
     //Thumnail Image on the bottom of the card
