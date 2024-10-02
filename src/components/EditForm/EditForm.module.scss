@@ -1,0 +1,50 @@
+@use "../../styles/mixins" as m;
+@use "../../styles/variables" as *;
+@use "../../styles/placeholders";
+
+.formStyling {
+  @include m.flexBox(column, center, center, 4rem);
+  @extend %breadtextfont;
+  background: $white-color;
+  width: 80%;
+  padding: 5rem 1rem;
+
+  @media (min-width: 1280px) {
+    width: 55%;
+    padding: 4rem 0.5rem 15rem 0.5rem;
+  }
+
+  form {
+    @include m.flexBox(column, center, center, 1rem);
+    input {
+      height: 2rem;
+      width: 15rem;
+
+      @media (min-width: 1280px) {
+        width: 25rem;
+        height: 2.5rem;
+      }
+    }
+
+    textarea {
+      resize: none;
+      width: 14rem;
+      height: 10rem;
+
+      @media (min-width: 1280px) {
+        width: 25rem;
+        height: 15rem;
+      }
+    }
+
+    input[type="submit"] {
+      height: 2.5rem;
+      width: 7rem;
+
+      @media (min-width: 1280px) {
+        width: 10rem;
+        cursor: pointer;
+      }
+    }
+  }
+}

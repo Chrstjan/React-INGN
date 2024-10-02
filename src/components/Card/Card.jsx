@@ -80,9 +80,9 @@ export const Card = ({ data, hideReadMore, cardStyling, user, action }) => {
                 <button onClick={() => action.mutate(item?.id)}>
                   <MdDelete />
                 </button>
-                <button>
+                <Link to={`/edit/${item.id}`}>
                   <FaEdit />
-                </button>
+                </Link>
               </span>
             ) : null}
           </figure>

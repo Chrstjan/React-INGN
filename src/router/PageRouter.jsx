@@ -6,6 +6,7 @@ import { ArticlePage } from "../pages/ArticlePage";
 import { CategoryPage } from "../pages/CategoryPage";
 import { LoginPage } from "../pages/LoginPage";
 import { useState } from "react";
+import { EditPage } from "../pages/EditPage";
 
 export const PageRouter = () => {
   const [user, setUser] = useState();
@@ -19,6 +20,7 @@ export const PageRouter = () => {
           path={Paths.login}
           element={<LoginPage setUser={setUser} user={user} />}
         />
+        <Route path={Paths.editPage} element={<EditPage user={user} />} />
         <Route path={Paths.pageNotFound} element={<h2>404 not found...</h2>} />
       </Route>
     </Routes>
