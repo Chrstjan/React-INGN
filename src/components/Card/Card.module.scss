@@ -14,9 +14,6 @@
     width: 100%;
     margin: 0;
     padding: 0;
-    height: 650;
-    min-height: 600px;
-    max-height: 650px;
 
     .textContainer {
       padding: 0.4rem 1rem;
@@ -44,44 +41,32 @@
     align-items: flex-start;
     padding: 2rem;
     padding: 0;
-    width: 60%;
 
-    &:nth-child(1) {
-      grid-area: 1 / 1 / 2 / 3;
-    }
-    &:nth-child(2) {
-      grid-area: 2 / 1 / 4 / 2;
-    }
-    &:nth-child(3) {
-      grid-area: 2 / 2 / 3 / 3;
-    }
-    &:nth-child(4) {
-      grid-area: 3 / 2 / 5 / 3;
-    }
-    &:nth-child(5) {
-      grid-area: 4 / 1 / 5 / 2;
-    }
-    &:nth-child(8) {
-      grid-area: 7 / 1 / 9 / 2;
-    }
-    &:nth-child(9) {
-      grid-area: 7 / 2 / 9 / 3;
+    &.news-1{
+      grid-area: 1 / 1 / span 2 / span 2;
+  }
+
+    &.news-2{
+      grid-area: 3 / 1/ span 2 / span 1;
+  }
+
+    &.news-3{
+      grid-area: 3 / 2 / span 1 / span 1;
     }
 
-    .textContainer {
-      padding: 2rem;
+    &.news-4{
+      grid-area: 4 / 2 /span 2/ span 1;
+  }
+
+    &.news-5{
+      grid-area: 5 / 1 / span 1 /span 1;
     }
 
-    .thumbnailContainer {
-      width: 100%;
-      padding: 0;
-    }
-
-    &:nth-child(6) {
+    &.news-6 {
+      grid-area: 6 / 1 / span 1 / span 2;
       flex-direction: row-reverse;
       gap: 1rem;
       padding: 0;
-      grid-area: 5 / 1 / 6 / 3;
 
       .textContainer {
         display: flex;
@@ -97,11 +82,12 @@
         margin: 0;
       }
     }
-    &:nth-child(7) {
+
+    &.news-7 {
+      grid-area: 7 / 1 / span 1 / span 2;
       flex-direction: row;
       gap: 1rem;
       padding: 0;
-      grid-area: 6 / 1 / 7 / 3;
 
       img {
         margin: 0;
@@ -116,6 +102,24 @@
         max-height: 72vh;
         height: 72vh;
       }
+    }
+
+    &.news-8{
+      grid-area: 5 / 1 / span 1 / span 1;
+    }
+
+    &.news-9{
+      grid-area: 5 / 1 / span 1 / span 1;
+    }
+
+
+    .textContainer {
+      padding: 2rem;
+    }
+
+    .thumbnailContainer {
+      width: 100%;
+      padding: 0;
     }
 
     h3 {

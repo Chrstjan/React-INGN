@@ -6,55 +6,14 @@ import { MdDelete } from "react-icons/md";
 import style from "./Card.module.scss";
 
 export const Card = ({ data, hideReadMore, cardStyling, user, action }) => {
-  const [sortedArticles, setSortedArticles] = useState([]);
-  // const desktopGrid = [
-  //   style.news1,
-  //   style.news2,
-  //   style.news3,
-  //   style.news4,
-  //   style.news5,
-  //   style.news6,
-  //   style.news7,
-  //   style.news8,
-  //   style.news9,
-  // ];
-
-  const createGridArray = (articles) => {
-    let newArray = [[]];
-
-    articles.forEach((item, index) => {
-      length = newArray.length;
-      if ((index + 1) % 9) {
-        newArray[length - 1].push(item);
-      } else {
-        newArray.push([]);
-        newArray[length - 1].push(item);
-      }
-    });
-
-    setSortedArticles(newArray);
-    console.log("Sorted articles:", sortedArticles);
-  };
-
-  useEffect(() => {
-    createGridArray(data);
-  }, [data]);
-
-  useEffect(() => {
-    console.log("Sorted articles:", sortedArticles);
-    
-  }, [sortedArticles])
-
   return (
     <>
-      {data?.map((item, index) => {
+      {data?.slice(0, 9).map((item, index) => {
         const classIndex = (index % 9) + 1;
-        console.log(classIndex);
         return (
           <figure
             key={item.title}
-            className={`${style.cardStyling} ${style[cardStyling]}`}
-            // style={{ gridArea: "news" + (index + 1) /* classIndex */ }}
+            className={`${style.cardStyling} ${style[cardStyling]} ${style[`news-${classIndex}`]}`}
           >
             <div className={style.textContainer}>
               <header>
