@@ -42,24 +42,26 @@
     padding: 2rem;
     padding: 0;
 
-    &.news-1{
+    //Grid area til de første 9 artikler :)
+    // #region article grid
+    &.news-1 {
       grid-area: 1 / 1 / span 2 / span 2;
-  }
+    }
 
-    &.news-2{
-      grid-area: 3 / 1/ span 2 / span 1;
-  }
+    &.news-2 {
+      grid-area: 3 / 1 / span 2 / span 1;
+    }
 
-    &.news-3{
+    &.news-3 {
       grid-area: 3 / 2 / span 1 / span 1;
     }
 
-    &.news-4{
-      grid-area: 4 / 2 /span 2/ span 1;
-  }
+    &.news-4 {
+      grid-area: 4 / 2 / span 2 / span 1;
+    }
 
-    &.news-5{
-      grid-area: 5 / 1 / span 1 /span 1;
+    &.news-5 {
+      grid-area: 5 / 1 / span 1 / span 1;
     }
 
     &.news-6 {
@@ -104,14 +106,23 @@
       }
     }
 
-    &.news-8{
+    &.news-8 {
       grid-area: 5 / 1 / span 1 / span 1;
     }
 
-    &.news-9{
+    &.news-9 {
       grid-area: 5 / 1 / span 1 / span 1;
     }
 
+    &.news-10 {
+      grid-area: 8 / 1 / span 1 / span 1;
+    }
+
+    &.news-11 {
+      grid-area: 8 / 2 / span 1 / span 1;
+    }
+
+    // #endregion article grid
 
     .textContainer {
       padding: 2rem;
@@ -128,7 +139,6 @@
   }
 
   &.singleArticle {
-
     @media (min-width: 768px) {
       width: 80%;
     }

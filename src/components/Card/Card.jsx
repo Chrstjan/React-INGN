@@ -8,12 +8,14 @@ import style from "./Card.module.scss";
 export const Card = ({ data, hideReadMore, cardStyling, user, action }) => {
   return (
     <>
-      {data?.slice(0, 9).map((item, index) => {
-        const classIndex = (index % 9) + 1;
+      {data?.slice(0, 11).map((item, index) => {
+        const classIndex = index + 1;
         return (
           <figure
             key={item.title}
-            className={`${style.cardStyling} ${style[cardStyling]} ${style[`news-${classIndex}`]}`}
+            className={`${style.cardStyling} ${style[cardStyling]} ${
+              style[`news-${classIndex}`]
+            }`}
           >
             <div className={style.textContainer}>
               <header>

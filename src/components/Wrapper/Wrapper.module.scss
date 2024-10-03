@@ -8,20 +8,19 @@
   padding: 1rem 0rem;
 
   &.articleGrid {
-
     @media (min-width: 768px) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
       padding: 1rem 1rem;
     }
-    
+
     @media (min-width: 1280px) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-auto-rows: min-content;
       gap: 0rem;
-      padding: 0;
+      padding: 2rem 12rem;
     }
   }
 
