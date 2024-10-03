@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Markdown from "markdown-to-jsx";
 import { FaEdit } from "react-icons/fa";
@@ -6,6 +6,7 @@ import { MdDelete } from "react-icons/md";
 import style from "./Card.module.scss";
 
 export const Card = ({ data, hideReadMore, cardStyling, user, action }) => {
+  const [sortedArticles, setSortedArticles] = useState([]);
   // const desktopGrid = [
   //   style.news1,
   //   style.news2,
@@ -18,34 +19,42 @@ export const Card = ({ data, hideReadMore, cardStyling, user, action }) => {
   //   style.news9,
   // ];
 
-  // const createGridArray = (_arr) => {
-  //   let newArray = [[]];
+  const createGridArray = (articles) => {
+    let newArray = [[]];
 
-  //   _arr.forEach((item, index) => {
-  //     length = newArray.length;
-  //     if ((index + 1) % 9) {
-  //       newArray[length - 1].push(item);
-  //     } else {
-  //       newArray.push([]);
-  //       newArray[length - 1].push(item);
-  //     }
-  //   });
+    articles.forEach((item, index) => {
+      length = newArray.length;
+      if ((index + 1) % 9) {
+        newArray[length - 1].push(item);
+      } else {
+        newArray.push([]);
+        newArray[length - 1].push(item);
+      }
+    });
 
-  //   console.log(newArray);
-  // };
+    setSortedArticles(newArray);
+    console.log("Sorted articles:", sortedArticles);
+  };
 
-  // useEffect(() => {
-  //   createGridArray(data);
-  // }, [data]);
+  useEffect(() => {
+    createGridArray(data);
+  }, [data]);
+
+  useEffect(() => {
+    console.log("Sorted articles:", sortedArticles);
+    
+  }, [sortedArticles])
 
   return (
     <>
-      {data?.slice(0, 9).map((item, index) => {
+      {data?.map((item, index) => {
+        const classIndex = (index % 9) + 1;
+        console.log(classIndex);
         return (
           <figure
             key={item.title}
             className={`${style.cardStyling} ${style[cardStyling]}`}
-            // style={{ gridArea: "news" + (index + 1) }}
+            // style={{ gridArea: "news" + (index + 1) /* classIndex */ }}
           >
             <div className={style.textContainer}>
               <header>

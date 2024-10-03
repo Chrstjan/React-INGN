@@ -1,5 +1,5 @@
 export const allBlogs = `query AllBlogs {
-  blogs {
+  blogs (first: 100) {
     author
     category
     releaseDate

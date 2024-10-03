@@ -31,7 +31,7 @@
     @include m.flexBox(row, center, center, 1rem);
 
     .burgerStyling {
-      @media (min-width: 1280px) {
+      @media (min-width: 768px) {
         display: none;
       }
     }

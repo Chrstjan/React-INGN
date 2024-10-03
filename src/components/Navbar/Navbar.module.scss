@@ -5,10 +5,10 @@
 .navStyling {
   display: none;
 
-  @media (min-width: 1280px) {
+  @media (min-width: 768px) {
     display: flex;
     flex-direction: row;
-    gap: 1.3rem;
+    gap: 0.7rem;
     font-size: 19px;
     padding-left: 0;
   }
@@ -39,6 +39,11 @@
 
     @media (min-width: 1280px) {
       padding: 0rem 0.7rem;
+      border-right: 0;
+
+      &:last-of-type {
+        border-right: 2.3px solid $dark-color;
+      }
     }
   }
 

@@ -11,7 +11,7 @@
     bottom: 0;
     background: $white-color;
 
-    @media (min-width: 1280px) {
+    @media (min-width: 768px) {
         flex-direction: row;
         justify-content: space-evenly;
     }
