@@ -9,6 +9,7 @@ import { Wrapper } from "../components/Wrapper/Wrapper";
 import { EditForm } from "../components/EditForm/EditForm";
 
 export const EditPage = ({ user }) => {
+  //BlogId kommer fra url'en der bliver sendt afsted fra en anden page
   const { blogId } = useParams();
 
   const queryClient = useQueryClient();
@@ -63,6 +64,14 @@ export const EditPage = ({ user }) => {
     return <h2>Loading...</h2>;
   }
 
+
+  /*
+  Funktion der kører når man sender sin edit form afsted til hygraph.
+  Den henter title og content fra de tilsvarende input felter og gemmer dem i to variabler.
+
+  Derefter checker den om title og content variablerne er true (),
+  Hvis de er det laver den et object hvor den, og sender mutationen afsted med det objekt
+  */
   const updateBlogSubmit = (e) => {
     e.preventDefault(e);
     const title = e.target.title.value;

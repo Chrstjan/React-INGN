@@ -42,22 +42,38 @@
     padding: 2rem;
     padding: 0;
 
+    &.categoryCard {
+      @extend %newsheader;
+    }
+
     //Grid area til de første 9 artikler :)
     // #region article grid
-    &.news-1 {
+    &.gridCard.news-1 {
       grid-area: 1 / 1 / span 2 / span 2;
+      .textContainer {
+        figcaption {
+          align-self: flex-start;
+        }
+      }
     }
 
-    &.news-2 {
+    &.gridCard.news-2 {
       grid-area: 3 / 1 / span 2 / span 1;
+      height: 100%;
+      @extend %newsheader;
     }
 
-    &.news-3 {
+    &.gridCard.news-3 {
+      
       grid-area: 3 / 2 / span 1 / span 1;
-      height: 37vh;
+      min-height: 36vh;
+
 
       .textContainer {
-        margin-top: 8rem;
+
+        header {
+          align-self: flex-start;
+        }
       }
       
       .thumbnailStyling {
@@ -68,13 +84,15 @@
       }
     }
 
-    &.news-4 {
+    &.gridCard.news-4 {
       grid-area: 4 / 2 / span 2 / span 1;
+      @extend %newsheader;
     }
 
-    &.news-5 {
+    &.gridCard.news-5 {
       grid-area: 5 / 1 / span 1 / span 1;
       margin-bottom: 3rem;
+      @extend %newsheader;
       
       height: 37vh;
 
@@ -89,8 +107,9 @@
       }
     }
 
-    &.news-6 {
+    &.gridCard.news-6 {
       grid-area: 6 / 1 / span 1 / span 2;
+      @extend %newsheader;
       flex-direction: row-reverse;
       gap: 1rem;
       padding: 0;
@@ -110,8 +129,9 @@
       }
     }
 
-    &.news-7 {
+    &.gridCard.news-7 {
       grid-area: 7 / 1 / span 1 / span 2;
+      @extend %newsheader;
       flex-direction: row;
       gap: 1rem;
       padding: 0;
@@ -134,11 +154,11 @@
       }
     }
 
-    &.news-8 {
+    &.gridCard.news-8 {
       display: none;
     }
 
-    &.news-9 {
+    &.gridCard.news-9 {
       // grid-area: 5 / 1 / span 1 / span 1;
       display: none;
 
@@ -150,8 +170,9 @@
 
     }
 
-    &.news-10 {
+    &.gridCard.news-10 {
       grid-area: 8 / 1 / span 1 / span 1;
+      @extend %newsheader;
 
       .thumbnailStyling {
         height: 45vh;
@@ -159,8 +180,9 @@
       }
     }
 
-    &.news-11 {
+    &.gridCard.news-11 {
       grid-area: 8 / 2 / span 1 / span 1;
+      @extend %newsheader;
 
       .thumbnailStyling {
         height: 47vh;

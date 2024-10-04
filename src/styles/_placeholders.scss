@@ -9,3 +9,14 @@
 %breadtextfont {
     font-family: "Roboto Flex", sans-serif;
 }
+
+
+@media (min-width: 1280px) {
+    %newsheader {
+        .textContainer {
+            header {
+              align-self: flex-start;
+            }
+          }
+    }
+}

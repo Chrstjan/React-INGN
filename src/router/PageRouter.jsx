@@ -9,6 +9,7 @@ import { useState } from "react";
 import { EditPage } from "../pages/EditPage";
 
 export const PageRouter = () => {
+  //Laver en state til at gemme om brugeren er logget ind som admin
   const [user, setUser] = useState();
   return (
     <Routes>

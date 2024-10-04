@@ -46,4 +46,18 @@
       }
     }
   }
+  button {
+      background: $red-color;
+      color: $white-color;
+      height: 2.5rem;
+      width: 7rem;
+
+      @media (min-width: 1280px) {
+        margin-top: 10rem;
+        width: 10rem;
+        justify-content: center;
+        align-self: center;
+        cursor: pointer;
+      }
+  }
 }

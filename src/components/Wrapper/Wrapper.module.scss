@@ -7,6 +7,10 @@
   min-height: 80vh;
   padding: 1rem 0rem;
 
+  @media (min-width: 1280px) {
+    padding: 2rem 12rem;
+  }
+
   &.articleGrid {
     @media (min-width: 768px) {
       display: grid;
