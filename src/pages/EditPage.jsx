@@ -12,6 +12,7 @@ export const EditPage = ({ user }) => {
   //BlogId kommer fra url'en der bliver sendt afsted fra en anden page
   const { blogId } = useParams();
 
+  //Bruger useQueryClient til at kunne clear cache når vi køre edit og update muatation
   const queryClient = useQueryClient();
 
   const { data, isLoading, error } = useGraphFetch(
@@ -24,6 +25,7 @@ export const EditPage = ({ user }) => {
 
   console.log(data);
 
+  //Bruger en mutation fra graphql til at opdatere artikler ved hjælp af blogId url param
   const updateMutation = useMutation({
     mutationFn: async (data) =>
       request({
@@ -43,6 +45,7 @@ export const EditPage = ({ user }) => {
       console.log("mutation succesful");
       queryClient.invalidateQueries();
     },
+    //Når edit muation går igennem kører den der mutation for at ændre det fra draft til at blive published
     onSettled: async () => {
       request({
         url: import.meta.env.VITE_PUBLIC_API_KEY,
